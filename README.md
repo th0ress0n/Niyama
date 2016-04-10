@@ -1,2 +1,0 @@
-# Niyama
-Niyama Naturopathic 
