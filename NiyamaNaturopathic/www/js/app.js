@@ -25,49 +25,196 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
+  .state('app', {
     url: '/app',
     abstract: true,
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.home', {
+    url: '/home',
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: 'templates/home.html',
+        controller: 'HomeCtrl'
       }
     }
   })
-
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.about', {
+    url: '/about',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/about.html',
+        controller: 'AboutCtrl'
+      }
+    }
+  })
+  .state('app.consultations', {
+    url: '/consultations',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/consultations.html',
+        controller: 'ConsultationsCtrl'
+      }
+    }
+  })
+  // -- Recipes Controllers -- //
+  .state('app.breakfast', {
+    url: '/breakfast',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/breakfast.html',
+        controller: 'BreakfastCtrl'
+      }
+    }
+  })
+  .state('app.dairyfree', {
+    url: '/dairyfree',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/dairyfree.html',
+        controller: 'DairyfreeCtrl'
+      }
+    }
+  })
+  .state('app.drinks', {
+    url: '/drinks',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/drinks.html',
+        controller: 'DrinksCtrl'
+      }
+    }
+  })
+  .state('app.glutenfree', {
+    url: '/glutenfree',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/glutenfree.html',
+        controller: 'GlutenfreeCtrl'
+      }
+    }
+  })
+  .state('app.kids', {
+    url: '/kids',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/kids.html',
+        controller: 'KidsCtrl'
+      }
+    }
+  })
+  .state('app.mains', {
+    url: '/mains',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/mains.html',
+        controller: 'MainsCtrl'
+      }
+    }
+  })
+  .state('app.snacks', {
+    url: '/snacks',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/snacks.html',
+        controller: 'SnacksCtrl'
+      }
+    }
+  })
+  .state('app.staples', {
+    url: '/staples',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/staples.html',
+        controller: 'StaplesCtrl'
+      }
+    }
+  })
+  .state('app.vegan', {
+    url: '/vegan',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/vegan.html',
+        controller: 'VeganCtrl'
+      }
+    }
+  })
+  // -- Content Controllers -- //
+  .state('app.childrenshealth', {
+    url: '/childrenshealth',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/childrenshealth.html',
+        controller: 'ChildrenshealthCtrl'
+      }
+    }
+  })
+  .state('app.healthyliving', {
+    url: '/healthyliving',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/healthyliving.html',
+        controller: 'HealthylivingCtrl'
+      }
+    }
+  })
+  .state('app.herbalmedicine', {
+    url: '/herbalmedicine',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/herbalmedicine.html',
+        controller: 'HerbalmedicineCtrl'
+      }
+    }
+  })
+  .state('app.naturalbeauty', {
+    url: '/naturalbeauty',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/naturalbeauty.html',
+        controller: 'NaturalbeautyCtrl'
+      }
+    }
+  })
+  .state('app.naturopathy', {
+    url: '/naturopathy',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/naturopathy.html',
+        controller: 'NaturopathyCtrl'
+      }
+    }
+  })
+  .state('app.nutrition', {
+    url: '/nutrition',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/nutrition.html',
+        controller: 'NutritionCtrl'
+      }
+    }
+  })
+  // ---------------------- //
+  .state('app.article', {
+    url: '/article/:articleId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/articledetail.html',
+        controller: 'ArticleDetailCtrl'
+      }
+    }
+  })
+  .state('app.recipe', {
+    url: '/recipe/:recipeId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/recipedetail.html',
+        controller: 'RecipeDetailCtrl'
       }
     }
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/consultations');
 });
